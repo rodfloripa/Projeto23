@@ -1,0 +1,5 @@
+openai==2.1.0
+flask==3.0.3
+pymilvus==2.2.0
+pymilvus[milvus_lite]==2.2.0
+sentence_transformers==3.2.1
