@@ -7,9 +7,10 @@ assuntos de SAC (políMcas de troca, devolução etc) e o outro agente vai trata
 no catálogo da empresa.
 
 Execute:
-docker-compose up
 
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <ID do contêiner Milvus>
+- docker-compose up
+
+- docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <ID do contêiner Milvus>
 
 -Substitua no arquivo python o IP 172.18.0.4 pelo IP que obteve no comando anterior. 
 Coloque o seu token da OpenAI no início do arquivo python 
