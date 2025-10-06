@@ -46,7 +46,7 @@ id_field = FieldSchema(name="id_field", dtype=DataType.INT64, is_primary=True, d
 pergunta = FieldSchema(name="pergunta", dtype=DataType.VARCHAR, max_length=2048)
 resposta = FieldSchema(name="resposta", dtype=DataType.VARCHAR, max_length=2048)
 schema = CollectionSchema(fields=[id_field, pergunta, resposta,vector_field], description="Milvus ")
-collection = Collection(name="sac         ", schema=schema)
+collection = Collection(name="sac", schema=schema)
 collection.create_index(field_name="my_vector", index_params=index_params)
 
 # Carregar dados de SAC
@@ -144,3 +144,4 @@ if __name__ == '__main__':
         app.run(debug=False) #port=5000)
     finally:
         conn.close()
+
