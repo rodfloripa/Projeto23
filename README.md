@@ -13,7 +13,7 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <ID
 -Substitua no arquivo python o IP 172.18.0.4 pelo IP que obteve no comando anterior 
 -Coloque o seu token da OpenAI no início do arquivo python 
 
--Instale as bibliotecas necessárias: pip install Requeriments.txt 
+- Instale as bibliotecas necessárias: pip install Requeriments.txt 
 - Execute o script: 'python app.py'
 
 Exemplo de uso
