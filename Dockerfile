@@ -23,8 +23,8 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py38_23.11.0-2-L
 
 ENV PATH=$CONDA_DIR/bin:$PATH
 RUN conda install -c conda-forge scikit-surprise -y
-RUN git clone https://github.com/gdmarmerola/cfml_tools.git
-WORKDIR ${APP_DIR}/cfml_tools
+#RUN git clone https://github.com/gdmarmerola/cfml_tools.git
+#WORKDIR ${APP_DIR}/cfml_tools
 RUN python setup.py install
 WORKDIR ${APP_DIR}
 
