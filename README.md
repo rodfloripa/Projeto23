@@ -12,9 +12,6 @@ Execute:
 
 - docker-compose up
 
-- docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <ID do contêiner Milvus>
-
--Substitua no arquivo python o IP 172.18.0.4 pelo IP que obteve no comando anterior. 
 Coloque o seu token da OpenAI no início do arquivo python 
 
 - Instale as bibliotecas necessárias: pip install Requeriments.txt 
