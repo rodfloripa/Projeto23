@@ -13,7 +13,7 @@ openai.api_key = "SUA_CHAVE_API_AQUI"
 # Configuração do banco de dados vetorial
 connections.connect(
     alias="default",
-    host="172.18.0.4",
+    host="milvus-standalone",
     port=19530,       
     user="root",       
     password="Milvus", 
@@ -144,5 +144,6 @@ if __name__ == '__main__':
         app.run(host ="0.0.0.0", debug=False)
     finally:
         conn.close()
+
 
 
