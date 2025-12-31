@@ -1,6 +1,6 @@
 # Projeto23
 <p align="justify">
-Resoluçáo da prova da C&amp;A para o cargo de cientista de dados
+Resoluçáo da prova da C&amp;A para o cargo de cientista de dados.
 Esta é uma pequena aplicação de chat inteligente, composta por dois
 “sub-agentes”, que será consumida via API REST. O sistema mantem o histórico de
 conversas em banco SQLite para simular um diálogo continuo. Um dos agentes vai tratar de
