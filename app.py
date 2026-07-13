@@ -8,12 +8,12 @@ from sentence_transformers import SentenceTransformer
 app = Flask(__name__)
 model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
 # Configuração da API da OpenAI
-openai.api_key = "SUA_CHAVE_API_AQUI"
+openai.api_key = 'sk-proj...'
 
 # Configuração do banco de dados vetorial
 connections.connect(
     alias="default",
-    host="milvus-standalone",
+    host="localhost",
     port=19530,       
     user="root",       
     password="Milvus", 
@@ -21,7 +21,8 @@ connections.connect(
     timeout=60)
 
 # Criar banco de dados sql
-conn = sqlite3.connect('conversas.db')
+#conn = sqlite3.connect('conversas.db')
+conn = sqlite3.connect('conversas.db', check_same_thread=False)
 cursor = conn.cursor()
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS conversas (
@@ -46,7 +47,7 @@ id_field = FieldSchema(name="id_field", dtype=DataType.INT64, is_primary=True, d
 pergunta = FieldSchema(name="pergunta", dtype=DataType.VARCHAR, max_length=2048)
 resposta = FieldSchema(name="resposta", dtype=DataType.VARCHAR, max_length=2048)
 schema = CollectionSchema(fields=[id_field, pergunta, resposta,vector_field], description="Milvus ")
-collection = Collection(name="sac", schema=schema)
+collection = Collection(name="sac         ", schema=schema)
 collection.create_index(field_name="my_vector", index_params=index_params)
 
 # Carregar dados de SAC
@@ -115,7 +116,7 @@ def responder_sac(pergunta):
         return results[0].entity.get("resposta")
     else:
         response = openai.Completion.create(
-            engine="text-davinci-003",
+            model="gpt-3.5-turbo-instruct",
             prompt=pergunta,
             max_tokens=1024,
             n=1,
@@ -141,9 +142,6 @@ def produtos():
 
 if __name__ == '__main__':
     try:
-        app.run(host ="0.0.0.0", debug=False)
+        app.run(debug=False) #port=5000)
     finally:
         conn.close()
-
-
-
