@@ -23,3 +23,8 @@ Exemplo de uso
     -  'curl -X POST -H "Content-Type: application/json" -d '{"pergunta": "Sua pergunta aqui"}' http://localhost:5000/sac'
 - `/produtos`: Endpoint para buscar produtos
     -  'curl -X POST -H "Content-Type: application/json" -d '{"query": "Seu termo de busca aqui"}' http://localhost:5000/produtos'
+
+<p align="center">
+  <img src="https://github.com/rodfloripa/Projeto23/blob/main/fig1.png">
+</p>
+
